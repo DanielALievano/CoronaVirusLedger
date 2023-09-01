@@ -1,0 +1,49 @@
+public class CoronaVaccineRecord {
+    private String nameVacManu;
+    private String dateFirstShot;
+    private String dateSecondShot;
+    private String dateBoosterShot;
+    private String vacSite;
+
+    //CONSTRUCTOR
+    public CoronaVaccineRecord(String NameVacManu, String dateFirstShot, String dateSecondShot, String dateBoosterShot, String Vacsite) {
+        this.nameVacManu = NameVacManu;
+        this.dateFirstShot = dateFirstShot;
+        this.dateSecondShot= dateSecondShot;
+        this.dateBoosterShot = dateBoosterShot;
+        this.vacSite = Vacsite;
+
+    }
+
+        public String getNameVacManu () {return nameVacManu;}
+
+        public String getDateFirstShot () {return dateFirstShot;}
+        public String getDateSecondShot () {
+            return dateSecondShot;
+        }
+        public String getDateBoosterShot () {
+            return dateBoosterShot;
+        }
+        public String getVacSite () {
+            return vacSite;
+        }
+        //Getter
+        public void setNameVacManu (String nameVacManu){
+            this.nameVacManu = nameVacManu;
+        }
+        public void setDateFirstShot (String dateFirstShot){
+            this.dateFirstShot = dateFirstShot;
+        }
+        public void setDateSecondShot (String dateSecondShot){
+            this.dateSecondShot = dateSecondShot;
+        }
+        public void setDateBoosterShot (String dateBoosterShot){
+            this.dateBoosterShot = dateBoosterShot;
+        }
+        public void setVacSitee (String vacSite){
+            this.vacSite = vacSite;
+        }
+    public String toString(){
+        return "This person got their first shot on " + dateFirstShot +  " and their second shot on "  + dateSecondShot + " and their booster shot on  " + dateBoosterShot + " " + "and recieved these shots in " + vacSite;
+    }
+    }
