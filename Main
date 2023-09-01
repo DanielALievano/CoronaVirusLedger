@@ -1,0 +1,68 @@
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+/**
+ * @author 6226504
+ * Title:Challenge2: CoronaVaccine
+ * Semester: Spring 2023 -- COP2210
+ * Prof. Charters & UTA Armani Weise
+ * Description:
+ * This program tracks vaccines taken and dates taken for specific persons in batches of 3
+
+ */
+public class Project2Corona {
+    public static void main(String[] args) {
+        /**
+         * This is my main function which will prompt the user to insert all the information and then display the record of
+         * the individual the information was filled out for and then immediately move to prompt about the next user
+         */
+        reportVaccinations(APatient(AVaccineRecord()));
+        reportVaccinations(APatient(AVaccineRecord()));
+        reportVaccinations(APatient(AVaccineRecord()));
+
+    }
+// This method prompts the user of the various attributes associated with CoronaVaccine record including
+// nameManuVac, dateFirstShot, dateSecondshot, dateBoostershot, and vacSite
+    public static CoronaVaccineRecord AVaccineRecord() {
+        String nameManuVac, dateFirstShot, dateSecondShot, dateBoosterShot, vacSite;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("What is the name of the vaccine manufacturer? ");
+        nameManuVac = keyboard.nextLine();
+        System.out.println("What was the date of the first shot? (format in mm/dd/yy) ");
+        dateFirstShot = keyboard.nextLine();
+        System.out.println("What was the date of the second shot? (format in mm/dd/yy)");
+        dateSecondShot = keyboard.nextLine();
+        System.out.println("What was the date of the booster shot? (format in mm/dd/yy)");
+        dateBoosterShot = keyboard.nextLine();
+        System.out.println("What was the name of the Vaccination site?");
+        vacSite = keyboard.nextLine();
+        CoronaVaccineRecord Record = new CoronaVaccineRecord(nameManuVac, dateFirstShot, dateSecondShot, dateBoosterShot, vacSite);
+        return Record;
+
+    }
+    //Prompts the User for their information for storage in Record about  firstName lastName and DoB
+    public static Patient APatient(CoronaVaccineRecord Record) {
+        String firstName, lastName, DoB;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("What is your first name? ");
+        firstName = keyboard.nextLine();
+        System.out.println("What is your last name? ");
+        lastName = keyboard.nextLine();
+        System.out.println("What is your date of birth? (format in mm/dd/yy)");
+        DoB = keyboard.nextLine();
+        Patient APatient = new Patient(firstName, lastName, DoB, Record);
+        return APatient;
+    }
+    //Is the final display of all the information gathered
+    public  static void reportVaccinations(Patient APatient){
+        System.out.println("Here is the vaccination record for:" + APatient.getFirstName() + " " + APatient.getlastName()+ "\n" +  APatient);
+
+    }
+
+
+    }
+
+
+
+
+
